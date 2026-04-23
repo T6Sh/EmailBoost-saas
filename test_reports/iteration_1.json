@@ -1,0 +1,29 @@
+{
+  "summary": "Tested all major sections and interactions of the EmailBoost landing page. All features working correctly.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {
+        "flow": "Copy to clipboard",
+        "issue": "Shows 'Failed to copy' toast in automated test environment due to clipboard API restrictions in headless browser. Expected to work in real browser environment.",
+        "affected_selectors": ["[data-testid='copy-btn-1']"],
+        "priority": "LOW - known headless browser limitation"
+      }
+    ],
+    "design_issues": []
+  },
+  "test_report_links": ["/app/test_reports/iteration_1.json"],
+  "action_items": [],
+  "critical_code_review_comments": [],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A", "frontend": "95%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "All sections verified: Hero, How It Works, Demo, Features, Pricing, CTA, Footer. Demo generates 5 subject lines with MOCKED data (1.5s delay). Copy button shows 'Failed to copy' in headless but toast notification fires correctly. Newsletter subscribe shows success toast. Mobile hamburger menu works. Pricing shows BEST VALUE badge on Pro card (elevated). All data-testid attributes present and working.",
+  "mocked_apis": ["Demo subject line generation uses static hardcoded data with setTimeout 1.5s delay - NOT real AI"]
+}

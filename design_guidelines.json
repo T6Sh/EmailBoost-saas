@@ -1,0 +1,97 @@
+{
+  "project_name": "EmailBoost",
+  "theme": "light",
+  "archetype": "Archetype 4 (Swiss & High-Contrast)",
+  "design_philosophy": "Professional, premium SaaS aesthetic. Mixing Swiss grid rigidity with organic warmth from the orange accent. Prioritizes high-contrast typography and clear interactive elements.",
+  "dependencies_to_install": [
+    "framer-motion",
+    "lucide-react",
+    "react-tsparticles",
+    "tsparticles"
+  ],
+  "colors": {
+    "primary": "#2563EB",
+    "primary_hover": "#1D4ED8",
+    "accent": "#FF6B35",
+    "accent_hover": "#E85D25",
+    "background": "#FAFAFA",
+    "surface": "#FFFFFF",
+    "text_main": "#0A0A0A",
+    "text_muted": "#525252",
+    "border": "#E5E5E5",
+    "glass_bg": "bg-white/70",
+    "glass_border": "border-white/20"
+  },
+  "typography": {
+    "headings": {
+      "family": "Cabinet Grotesk, sans-serif",
+      "instructions": "Use Cabinet Grotesk for all Headings (H1-H4). Do NOT use Inter for headings. Use tracking-tight or tracking-tighter.",
+      "h1": "text-5xl md:text-6xl font-black tracking-tighter leading-none text-[#0A0A0A]",
+      "h2": "text-3xl md:text-4xl font-bold tracking-tight text-[#0A0A0A]",
+      "h3": "text-xl md:text-2xl font-bold tracking-tight text-[#0A0A0A]"
+    },
+    "body": {
+      "family": "Inter, sans-serif",
+      "instructions": "Use Inter for body text, inputs, buttons, and labels.",
+      "base": "text-base md:text-lg leading-relaxed font-medium text-[#525252]"
+    },
+    "labels": "text-xs font-bold tracking-[0.2em] uppercase text-[#525252]"
+  },
+  "spacing_and_layout": {
+    "section_padding": "py-24 md:py-32",
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-12 gap-8"
+  },
+  "sections": [
+    {
+      "name": "Header & Navigation",
+      "instructions": "Sticky header (`sticky top-0 z-50`) with crystal glassmorphism (`backdrop-blur-xl bg-white/70 border-b border-black/5`). Logo uses Lucide `Mail` icon + `Zap` icon overlapping or grouped, with text 'EmailBoost' in bold primary blue. Nav links (Home, How It Works, Pricing) aligned right, followed by a 'Try Now' CTA in primary blue. No hamburger menu on desktop."
+    },
+    {
+      "name": "Hero Section",
+      "instructions": "Massive H1 heading. Background MUST use a subtle CSS radial gradient (`bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50/50 via-purple-50/20 to-transparent`) and `react-tsparticles` for animated glowing particles in the background. CTA 'Try Free Demo' in Primary Blue with Lucide `ArrowRight`. \n\n**Hero Illustration**: DO NOT use a static image. Build a Composite UI Component using HTML/Tailwind: a mock email client window showing subject lines, green 'open rate' percentage badges, and an upward trending chart. Make it float using Framer Motion."
+    },
+    {
+      "name": "How It Works",
+      "instructions": "Light gray background section (`bg-gray-50/50`). '3 Simple Steps' heading. Use a 3-column grid. Each step should feature a large, prominent numbered circle (Orange background, white text) with a subtle dashed line connecting them horizontally (hidden on mobile). Generous padding (`p-8`) inside step containers."
+    },
+    {
+      "name": "Interactive Demo",
+      "instructions": "The core feature. Use the 'Control Room' grid style. A large 2-column layout (1 col on mobile). \nLeft side: Form card with Textarea for email draft, Selects for Industry/Type, and an Orange 'Generate' button. \nRight side: Output container with 3-4 rows of generated subject lines. Each row must show the subject text, a predicted open rate (e.g., '48% Open Rate' in green), and a 'Copy' button (Lucide `Copy` icon). Use Shadcn components for inputs and buttons, heavily customized to remove the 'default Vercel look'. Add Toast notification on Copy."
+    },
+    {
+      "name": "Features",
+      "instructions": "Bento grid layout. 3 cards highlighting: AI-Powered, Ranked by Performance, Industry-Specific. Use 'Neumorphism (Tactile)' style for the cards: `bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-black/5 rounded-2xl p-8`. Icons in Orange."
+    },
+    {
+      "name": "Pricing",
+      "instructions": "3 tier pricing (Free, Pro, Enterprise). \nPro tier ($19/mo) MUST be elevated (`-translate-y-4 md:-translate-y-8`), featuring a 'BEST VALUE' badge, high-contrast border (`border-primary`), and a prominent Primary Blue CTA. Free and Enterprise cards are stark white with black text and lighter borders."
+    },
+    {
+      "name": "CTA Section",
+      "instructions": "Dark mode inverted section. Midnight Blue (`#0F172A`) or Primary Blue background to break the light theme rhythm. Large heading 'Join 1000+ marketing teams', Orange 'Start Your Free Trial' button."
+    },
+    {
+      "name": "Footer",
+      "instructions": "Massive padding (`py-20`). 4 column grid for links, social icons, and a newsletter signup input. Copyright text at the bottom. Background stark white."
+    }
+  ],
+  "image_urls": [
+    {
+      "category": "founder_portrait_1",
+      "url": "https://images.unsplash.com/photo-1600896997793-b8ed3459a17f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwzfHxzdGFydHVwJTIwZm91bmRlciUyMHBvcnRyYWl0fGVufDB8fHx8MTc3NjY3NzQ4M3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Startup founder portrait for testimonials/social proof"
+    },
+    {
+      "category": "founder_portrait_2",
+      "url": "https://images.unsplash.com/photo-1758691737644-ef8be18256c3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwxfHxzdGFydHVwJTIwZm91bmRlciUyMHBvcnRyYWl0fGVufDB8fHx8MTc3NjY3NzQ4M3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Startup founder portrait for testimonials/social proof"
+    }
+  ],
+  "motion_and_interactions": {
+    "hover_states": "All buttons must use `hover:-translate-y-1 hover:shadow-lg transition-all duration-300`. Links must use `hover:text-primary transition-colors`.",
+    "scroll_animations": "Use `framer-motion` for scroll-triggered fade-in and slide-up animations. Elements should have `initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }}`.",
+    "hero_animation": "Staggered entrance for hero elements. The Hero Illustration (mock UI) must have a continuous slow floating animation (`animate={{ y: [0, -15, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}`)."
+  },
+  "testing_rules": "All interactive elements MUST have `data-testid` attributes (e.g., `data-testid='pricing-pro-cta'`, `data-testid='generate-subject-lines-btn'`)."
+}

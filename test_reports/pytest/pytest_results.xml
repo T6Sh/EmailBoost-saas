@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="9" time="24.961" timestamp="2026-04-20T10:10:41.392356+00:00" hostname="agent-env-ea2caca5-5efb-4b31-b4fb-07215f880960"><testcase classname="backend.tests.test_emailboost" name="test_health" time="0.309" /><testcase classname="backend.tests.test_emailboost" name="test_register_new_user" time="0.273"><failure message="AssertionError: assert 'test_f7f8ec50@test.com' == 'TEST_f7f8ec50@test.com'&#10;  &#10;  - TEST_f7f8ec50@test.com&#10;  ? ^^^^&#10;  + test_f7f8ec50@test.com&#10;  ? ^^^^">backend/tests/test_emailboost.py:43: in test_register_new_user
+    assert data.get("email") == email
+E   AssertionError: assert 'test_f7f8ec50@test.com' == 'TEST_f7f8ec50@test.com'
+E     
+E     - TEST_f7f8ec50@test.com
+E     ? ^^^^
+E     + test_f7f8ec50@test.com
+E     ? ^^^^</failure></testcase><testcase classname="backend.tests.test_emailboost" name="test_login_admin" time="0.278" /><testcase classname="backend.tests.test_emailboost" name="test_login_free_user" time="0.274" /><testcase classname="backend.tests.test_emailboost" name="test_auth_me" time="0.372" /><testcase classname="backend.tests.test_emailboost" name="test_generate_subject_lines" time="10.944" /><testcase classname="backend.tests.test_emailboost" name="test_generate_free_tier_remaining" time="12.238" /><testcase classname="backend.tests.test_emailboost" name="test_favorites_post_get_delete" time="0.062"><failure message="assert 422 == 200&#10; +  where 422 = &lt;Response [422]&gt;.status_code">backend/tests/test_emailboost.py:103: in test_favorites_post_get_delete
+    assert r.status_code == 200
+E   assert 422 == 200
+E    +  where 422 = &lt;Response [422]&gt;.status_code</failure></testcase><testcase classname="backend.tests.test_emailboost" name="test_stripe_checkout_creation" time="0.046" /></testsuite></testsuites>
