@@ -4,6 +4,7 @@ import { X, Mail, Lock, User, ArrowRight } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { toast } from 'sonner';
 
+console.log("AUTH MODAL NEW VERSION");
 function formatError(detail) {
   if (!detail) return 'Something went wrong. Please try again.';
   if (typeof detail === 'string') return detail;
@@ -17,7 +18,7 @@ export default function AuthModal({ isOpen, onClose, defaultTab = 'login', onSuc
   const [otp, setOtp] = useState('');       // ✅ NEW: store OTP
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const { login, register, verifyOt } = useAuth();
+  const { login, register, verifyOtp } = useAuth();
 
   const [loginForm, setLoginForm] = useState({ email: '', password: '' });
   const [signupForm, setSignupForm] = useState({ name: '', email: '', password: '' });
@@ -39,22 +40,6 @@ export default function AuthModal({ isOpen, onClose, defaultTab = 'login', onSuc
     }
   };
 
-  // const handleSignup = async (e) => {
-  //   e.preventDefault();
-  //   setError('');
-  //   if (signupForm.password.length < 6) { setError('Password must be at least 6 characters'); return; }
-  //   setLoading(true);
-  //   try {
-  //     await register(signupForm.name, signupForm.email, signupForm.password);
-  //     toast.success('Welcome to EmailBoost!');
-  //     onClose();
-  //     onSuccess?.();
-  //   } catch (err) {
-  //     setError(formatError(err.response?.data?.detail) || err.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   // ---------------- REGISTER (UPDATED) ----------------
   const handleRegister = async (e) => {
@@ -222,7 +207,7 @@ export default function AuthModal({ isOpen, onClose, defaultTab = 'login', onSuc
                   </button>
                 </form>
               ) : (
-                <form onSubmit={handleSignup} className="space-y-4">
+                <form onSubmit={handleRegister} className="space-y-4">
                   <input
                     type="text"
                     required
