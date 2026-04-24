@@ -47,12 +47,13 @@ export function AuthProvider({ children }) {
   // ---------------- VERIFY OTP ----------------
   const verifyOtp = async (email, otp) => {
     const { data } = await api.post("/auth/verify-otp", { email, otp });
+    setUser(data);
     setOtpEmail(null); // Clear OTP flow
     return data;
   };
 
   // ---------------- RESEND OTP ----------------
-  const resendOTP = async (email) => {
+  const resendOtp = async (email) => {
     return await api.post("/auth/resend-otp", { email });
   };
 
