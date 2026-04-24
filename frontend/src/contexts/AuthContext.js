@@ -45,7 +45,7 @@ export function AuthProvider({ children }) {
   };
 
   // ---------------- VERIFY OTP ----------------
-  const verifyOTP = async (email, otp) => {
+  const verifyOtp = async (email, otp) => {
     const { data } = await api.post("/auth/verify-otp", { email, otp });
     setOtpEmail(null); // Clear OTP flow
     return data;
@@ -74,7 +74,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, setUser, login, register, logout, checkAuth, refreshUser }}>
+    <AuthContext.Provider value={{ user, setUser, login, register, verifyOtp, resendOtp, otpEmail, logout, checkAuth, refreshUser }}>
       {children}
     </AuthContext.Provider>
   );
