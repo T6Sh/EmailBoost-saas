@@ -58,9 +58,10 @@ export default function AuthModal({ isOpen, onClose, defaultTab = 'login', onSuc
         signupForm.email,
         signupForm.password
       );
+      console.log("REGISTER RESPONSE:", res); // ✅ DEBUG
 
       // ✅ IMPORTANT CHANGE: move to OTP step
-      if (res.needs_verification) {
+      if (res?.needs_verification || true) {
         setStep('otp'); // 👉 move to OTP screen
         toast.success('OTP sent to your email');
       } else {
@@ -80,6 +81,10 @@ export default function AuthModal({ isOpen, onClose, defaultTab = 'login', onSuc
   const handleVerifyOtp = async (e) => {
     e.preventDefault();
     setError('');
+    if (otp.length !== 6) {
+      setError('Enter valid 6-digit OTP');
+      return;
+    }
     setLoading(true);
 
     try {
@@ -127,7 +132,10 @@ export default function AuthModal({ isOpen, onClose, defaultTab = 'login', onSuc
               <input
                 type="text"
                 value={otp}
-                onChange={(e) => setOtp(e.target.value)}
+                onChange={(e) => {
+                  const val = e.target.value.replace(/\D/g, '');
+                  if (val.length <= 6) setOtp(val);
+                }}
                 placeholder="Enter 6-digit OTP"
                 className="w-full px-4 py-3 border rounded-xl text-center text-lg tracking-widest"
               />
